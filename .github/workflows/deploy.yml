@@ -22,7 +22,7 @@ jobs:
         run: composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
 
       - name: Install Node.js Dependencies and Build Assets
-        run: npm install && npm run production # Or yarn install && yarn production if using yarn
+        run: npm install && npm run build # Or yarn install && yarn production if using yarn
 
       - name: Install Vapor CLI
         run: composer global require laravel/vapor-cli
