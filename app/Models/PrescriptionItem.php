@@ -1,0 +1,18 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class PrescriptionItem extends Model
+{
+    protected $fillable = [
+        'prescription_id','medicine_id','medicine_name','medicine_type',
+        'generic_name','strength','dosage','frequency','duration',
+        'route','instructions','quantity','status','dispensed_by','dispensed_at',
+    ];
+    protected $casts = ['dispensed_at' => 'datetime'];
+
+    public function prescription() { return $this->belongsTo(Prescription::class); }
+    public function medicine()     { return $this->belongsTo(Medicine::class); }
+}
