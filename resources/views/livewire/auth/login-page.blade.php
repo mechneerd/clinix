@@ -25,6 +25,20 @@
         <!-- Login Card -->
         <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-[2.5rem] p-8 shadow-2xl">
             
+            <!-- Session Error Message -->
+            @if(session('error'))
+                <div class="mb-6 p-4 bg-rose-50 border border-rose-100 rounded-2xl animate-in fade-in slide-in-from-top-2">
+                    <div class="flex items-center gap-3">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-rose-500 flex items-center justify-center shadow-lg shadow-rose-500/20">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                            </svg>
+                        </div>
+                        <p class="text-[11px] font-black uppercase tracking-wide text-rose-600 leading-tight">{{ session('error') }}</p>
+                    </div>
+                </div>
+            @endif
+
             <!-- Login Type Selector -->
             <div class="relative flex p-1 bg-slate-100 dark:bg-slate-800 rounded-2xl mb-8 border border-slate-200 dark:border-slate-700">
                 <!-- Sliding Background -->
